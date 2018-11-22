@@ -2,8 +2,9 @@ public class Adventure extends Holiday {
 
   private int difficulty;
 
-  public Adventure(String location, int cost, String startDate int duration, int difficulty){
-    super(location, cost, startDate, duration);
+  public Adventure(Admin admin, String location, int cost, String startDate int duration, Guide guide, int difficulty){
+    super(admin, location, cost, startDate, duration);
+    this.guide = guide;
     this.difficulty = difficulty;
   }
 }
