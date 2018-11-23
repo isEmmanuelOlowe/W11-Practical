@@ -7,4 +7,7 @@ public class Relaxation extends Holiday {
     this.amenities = amenities;
   }
 
+  public String getAmenities(){
+    this.amenities;
+  }
 }

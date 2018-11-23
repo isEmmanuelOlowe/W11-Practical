@@ -9,4 +9,11 @@ public class Culture extends Holiday {
     this.aspects = aspects;
   }
 
+  public isLecture(){
+    return lecture;
+  }
+
+  public String[] aspects(){
+    return aspects;
+  }
 }
