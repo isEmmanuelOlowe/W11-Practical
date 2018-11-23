@@ -5,4 +5,8 @@ public class Admin extends Staff {
     super(name, salary);
     this.skills = skills;
   }
+
+  public String getSkills(){
+    return skills;
+  }
 }
