@@ -3,7 +3,7 @@ public class Adventure extends Holiday {
   private int difficulty;
 
   public Adventure(Admin admin, String location, int cost, String startDate int duration, Guide guide, int difficulty){
-    uper(admin, location, cost, startDate, duration);
+    super(admin, location, cost, startDate, duration);
     this.guide = guide;
     this.difficulty = difficulty;
   }
