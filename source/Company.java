@@ -1,8 +1,10 @@
+import java.time.LocalDate;
+
 public class Company {
 
   private Staff[] staffMembers;
   private Holiday[] destinations;
-  public Company(Staff[] staffMembers, Holiday destinations){
+  public Company(Staff[] staffMembers, Holiday[] destinations){
     this.staffMembers = staffMembers;
     this.destinations = destinations;
   }
@@ -19,22 +21,23 @@ public class Company {
   public void totalSalaryCost(){
     int total = 0;
     for(Staff employee: staffMembers){
-      total += employee.getSalary;
+      total += employee.getSalary();
     }
-    System.out.println("---Total Salary Cost: £" + (float)employee.getSalary()/100);
+    System.out.println("---Total Salary Cost: £" + (float)total/100);
   }
 
   public void increaseSalaries(float percentage){
     for(Staff employee: staffMembers){
       employee.increaseSalary(percentage);
     }
-  } 
+  }
 
   public void guideSpecialisation(){
     System.out.println("---Holiday Guide: Specilisation---");
     for(Staff employee: staffMembers){
       if(employee instanceof Guide){
-        System.out.println(employee.getName() + ":  " + employee.getActivity());
+        Guide guide = (Guide)employee;
+        System.out.println(guide.getName() + ":  " + guide.getActivity());
       }
     }
   }
@@ -43,40 +46,41 @@ public class Company {
     System.out.println("---Holiday ID : Guide : Location : Difficulty level---");
     for(Holiday holiday: destinations){
       if(holiday instanceof Adventure){
-        System.out.println(holiday.getID() " : " + holiday.getGuide().getName() +  " : " + employee.getLocation() + " : " + employee.getDifficulty());
+        Adventure aHoliday = (Adventure)holiday;
+        System.out.println(aHoliday.getID() + " : " + aHoliday.getGuide().getName() +  " : " + aHoliday.getLocation() + " : " + aHoliday.getDifficulty());
       }
     }
   }
 
-  public void displayHolidays(){
+  public void displayHolidays(LocalDate period){
 
   }
 
   public void mostExpensiveH(){
     System.out.println("---Most Expensive Holiday Location: Price Location---");
-    Holiday max = staffMembers[0];
+    Holiday max = destinations[0];
     for(Holiday holiday: destinations){
       if(max.getCost() < holiday.getCost()){
         max = holiday;
       }
-    System.out.println(max.getLocation() + " £" +  max.getCost/100);
+    System.out.println(max.getLocation() + " £" +  (float)max.getCost()/100);
     }
   }
 
-  public cultureLectures(){
-    System.out.println("---Holiday's With Lectures---")
+  public void cultureLectures(){
+    System.out.println("---Holiday's With Lectures---");
     for(Holiday holiday: destinations){
       if(holiday instanceof Culture){
-        if(holiday.isLecture()){
-          System.out.print(holiday.getLocation()" : " + holiday.getCost() + " : "
+        Culture cHoliday = (Culture)holiday;
+        if(cHoliday.isLecture()){
+          System.out.print(cHoliday.getLocation() + " : £" + (float)cHoliday.getCost()/100
           + " : Aspects - ");
-          String dAspects;
-          for(String aspect: holiday.getAspects()){
-            dAspects += aspect + ", ");
+          String dAspects = "";
+          for(String aspect: cHoliday.getAspects()){
+            dAspects += aspect + ", ";
           }
           //to remove extra ", "
-          dAspects = dAspects.substring(0, dAspects.length - 3);
-          System.out.println(dAspects);
+          dAspects = dAspects.substring(0, dAspects.length() - 3);
         }
       }
     }

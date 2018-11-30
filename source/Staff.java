@@ -1,3 +1,4 @@
+import java.lang.Math;
 public class Staff {
   //unique identifier for staff member
   private static int noStaff = 0;
@@ -26,8 +27,8 @@ public class Staff {
     return this.salary;
   }
 
-  public float increaseSalary(float percentage){
-    this.salary = (int) this.salary * percentage;
+  public void increaseSalary(float percentage){
+    this.salary = (int)Math.round(this.salary * percentage);
   }
 
 }

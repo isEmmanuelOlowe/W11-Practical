@@ -6,7 +6,7 @@ public class Admin extends Staff {
     this.skills = skills;
   }
 
-  public String getSkills(){
-    return skills;
+  public String[] getSkills(){
+    return this.skills;
   }
 }

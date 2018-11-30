@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 //Generalised class for a holiday
 public class Holiday {
   //The unique identifier for a holiday
@@ -9,7 +10,7 @@ public class Holiday {
   private String startDate;
   private int duration;
 
-  public Holiday(Admin admin, String location, int cost, String startDate int duration){
+  public Holiday(Admin admin, String location, int cost, String startDate, int duration){
     this.admin = admin;
     this.holidayID = noHolidays;
     this.location = location;
