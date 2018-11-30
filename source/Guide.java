@@ -9,4 +9,9 @@ public class Guide extends Staff {
   public String getActivity(){
     return this.activity;
   }
+
+  public void printAll(){
+    super.printAll();
+    System.out.println("|" + this.activity + "|");
+  }
 }

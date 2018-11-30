@@ -27,8 +27,14 @@ public class Staff {
     return this.salary;
   }
 
-  public void increaseSalary(float percentage){
+  public void increaseSalary(double percentage){
     this.salary = (int)Math.round(this.salary * percentage);
+  }
+
+  public void printAll(){
+    System.out.print("|" + this.staffID);
+    System.out.print("|" + this.name);
+    System.out.print("|" + this.salary);
   }
 
 }
