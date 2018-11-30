@@ -26,4 +26,8 @@ public class Staff {
     return this.salary;
   }
 
+  public float increaseSalary(float percentage){
+    this.salary = (int) this.salary * percentage;
+  }
+
 }

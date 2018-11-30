@@ -13,7 +13,7 @@ public class Culture extends Holiday {
     return lecture;
   }
 
-  public String[] aspects(){
+  public String[] getAspects(){
     return aspects;
   }
 }
