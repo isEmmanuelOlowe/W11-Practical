@@ -20,6 +20,10 @@ public class Holiday {
     noHolidays++;
   }
 
+  public Admin getAdmin(){
+    return this.admin;
+  }
+
   public String getLocation(){
     return this.location;
   }

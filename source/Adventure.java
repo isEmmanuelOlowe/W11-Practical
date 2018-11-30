@@ -8,6 +8,9 @@ public class Adventure extends Holiday {
     this.difficulty = difficulty;
   }
 
+  public Guide getGuide(){
+    return this.guide;
+  }
   public int getDifficulty(){
     return this.difficulty;
   }

@@ -12,6 +12,8 @@ public class Company {
     for(Staff employee: staffMembers){
       System.out.println(employee.getName() + ": £" + (float)employee.getSalary()/100);
     }
+  }  public void displayHolidays(){
+
   }
 
   public void totalSalaryCost(){
@@ -26,7 +28,7 @@ public class Company {
     for(Staff employee: staffMembers){
       employee.increaseSalary(percentage);
     }
-  }
+  } 
 
   public void guideSpecialisation(){
     System.out.println("---Holiday Guide: Specilisation---");
@@ -38,10 +40,10 @@ public class Company {
   }
 
   public void adventureDetails(){
-    System.out.println("---Holiday ID : Location : Difficulty level---");
+    System.out.println("---Holiday ID : Guide : Location : Difficulty level---");
     for(Holiday holiday: destinations){
       if(holiday instanceof Adventure){
-        System.out.println(employee.getID() " : " + employee.getLocation() + " : " + employee.getDifficulty());
+        System.out.println(holiday.getID() " : " + holiday.getGuide().getName() +  " : " + employee.getLocation() + " : " + employee.getDifficulty());
       }
     }
   }
