@@ -2,17 +2,20 @@ import java.time.LocalDate;
 
 public class Culture extends Holiday {
 
-  private boolean lecture;
+  private Lecture lecture;
   private String[] aspects;
 
-  public Culture(Admin admin, String location, int cost, LocalDate startDate, int duration, boolean lecture, String[] aspects){
+  public Culture(Admin admin, String location, int cost, LocalDate startDate, int duration, Lecture lecture, String[] aspects){
     super(admin, location, cost, startDate, duration);
     this.lecture = lecture;
     this.aspects = aspects;
   }
 
   public boolean isLecture(){
-    return this.lecture;
+    if(this.lecture == Lecture.FALSE){
+      return false;
+    }
+    return true;
   }
 
   public String[] getAspects(){

@@ -2,10 +2,10 @@ import java.time.LocalDate;
 
 public class Adventure extends Holiday {
 
-  private int difficulty;
+  private Level difficulty;
   private Guide guide;
 
-  public Adventure(Admin admin, String location, int cost, LocalDate startDate, int duration, Guide guide, int difficulty){
+  public Adventure(Admin admin, String location, int cost, LocalDate startDate, int duration, Guide guide, Level difficulty){
     super(admin, location, cost, startDate, duration);
     this.guide = guide;
     this.difficulty = difficulty;
@@ -14,7 +14,7 @@ public class Adventure extends Holiday {
   public Guide getGuide(){
     return this.guide;
   }
-  public int getDifficulty(){
+  public Level getDifficulty(){
     return this.difficulty;
   }
   public void printAll(){

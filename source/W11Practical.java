@@ -9,7 +9,7 @@ public class W11Practical {
     Company company = new Company(staffList, holidays);
     //Test1(company);
     //Test2(company, holidays);
-    //Test3(company);
+    Test3(company);
   }
 
   public static void Test1(Company company){
@@ -72,7 +72,7 @@ public class W11Practical {
     //generating random dates
     int rDay;
     int rMonth;
-    //Random holiday duration
+    //Random holiday duration100%
     int rDuration;
     for(int i = 0; i < 10; i++){
       //For a New Adventure Object
@@ -80,7 +80,7 @@ public class W11Practical {
       rDay = rand.nextInt(MAX_DAY) + MIN_DAY;
       rMonth = rand.nextInt(MAX_MONTH) + MIN_MONTH;
       rDuration = rand.nextInt(MAX_DURATION) + MIN_DURATION;
-      holidayList[i] = new Adventure((Admin)staff[10], "Adventure Location " + i, rCost, LocalDate.of(2019, rMonth, rDay), rDuration, (Guide)staff[i], i);
+      holidayList[i] = new Adventure((Admin)staff[10], "Adventure Location " + i, rCost, LocalDate.of(2019, rMonth, rDay), rDuration, (Guide)staff[i], generateLevel(i));
       //For a New Culture Object
       rCost = rand.nextInt(MAX_COST)+ MIN_COST;
       rDay = rand.nextInt(MAX_DAY) + MIN_DAY;
@@ -88,7 +88,7 @@ public class W11Practical {
       rDuration = rand.nextInt(MAX_DURATION) + MIN_DURATION;
       //used for generating random aspects
       String[] aspects = {"Aspect " + i, "Aspect " + 2 * i};
-      holidayList[i + 10] = new Culture((Admin)staff[11], "Culture Location " + i, rCost, LocalDate.of(2019, rMonth, rDay), rDuration, i%2==0, aspects);
+      holidayList[i + 10] = new Culture((Admin)staff[11], "Culture Location " + i, rCost, LocalDate.of(2019, rMonth, rDay), rDuration, generateLecture(i), aspects);
       //For a new Culture Object
       rCost = rand.nextInt(500000)+ 5000;
       rDay = rand.nextInt(28) + 1;
@@ -97,5 +97,32 @@ public class W11Practical {
       holidayList[i + 20] = new Relaxation((Admin)staff[12], "Relaxation Location " + i,rCost ,LocalDate.of(2019, rMonth, rDay), rDuration, "amenities: " + i);
     }
     return holidayList;
+  }
+
+  //generates enums for use
+  public static Level generateLevel(int num){
+    //subtracts because there are only 5 possible enum values
+    while(num > 4){
+      num -= 5;
+    }
+    switch(num){
+      case 0: return Level.ENTRY;
+      case 1: return Level.LOW;
+      case 2: return Level.MEDIUM;
+      case 3: return Level.HIGH;
+      default: return Level.VERY_HIGH;
+    }
+  }
+
+  //generates enums for use
+  //pseudo random
+  public static Lecture generateLecture(int num){
+    if(num % 4 == 0){
+      return Lecture.ACADEMIC;
+    }
+    if(num % 2 == 0){
+      return Lecture.NOVELTY;
+    }
+    return Lecture.FALSE;
   }
 }
