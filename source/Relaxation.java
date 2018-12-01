@@ -13,6 +13,7 @@ public class Relaxation extends Holiday {
     return this.amenities;
   }
 
+  //prints all the objects data
   public void printAll(){
     super.printAll();
     System.out.println("|" + this.amenities + "|");

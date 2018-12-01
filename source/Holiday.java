@@ -45,6 +45,7 @@ public class Holiday {
     return this.holidayID;
   }
 
+  //prints all the data of the object
   public void printAll(){
     System.out.print("|" + this.holidayID);
     System.out.print("|" + this.admin.getName());
@@ -54,6 +55,7 @@ public class Holiday {
     System.out.print("|" + this.duration);
   }
 
+  //determines if a holiday falls within a certain range
   public boolean inRange(LocalDate period){
     if(this.startDate.minusDays(1).isBefore(period) && this.startDate.plusDays(this.duration).isAfter(period)){
       return true;

@@ -23,15 +23,19 @@ public class Staff {
     return this.name;
   }
 
+  
   public int getSalary(){
     return this.salary;
   }
 
+  //percentage increase of salary
   public void increaseSalary(double percentage){
     this.salary = (int)Math.round(this.salary * percentage);
   }
 
+  //prints all the objects data
   public void printAll(){
+    //prints them all on same line
     System.out.print("|" + this.staffID);
     System.out.print("|" + this.name);
     System.out.print("|" + this.salary);

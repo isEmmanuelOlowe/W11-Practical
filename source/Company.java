@@ -49,6 +49,7 @@ public class Company {
   }
 
   public void displayHolidaysIn(LocalDate period){
+      System.out.println("Holidays that are over " + period.toString());
       for(int i = 0; i < this.destinations.length; i++){
         if(destinations[i].inRange(period)){
           destinations[i].printAll();
@@ -58,6 +59,7 @@ public class Company {
 
   //details of the Holiday with highest cost
   public void mostExpensiveH(){
+    System.out.println("---------MOST EXPENSIVE HOLIDAY!!!---------");
     Holiday max = destinations[0];
     for(Holiday holiday: destinations){
       if(max.getCost() < holiday.getCost()){
